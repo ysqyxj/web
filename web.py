@@ -68,22 +68,8 @@ map_data.columns=['County_name','cases','case_rate','deaths','death_rate','date'
 map_data=map_data.drop(columns=['p'])
 
 map_data['lat']=pd.to_numeric(map_data['lat'])
-map_data['lon']=pd.to_numeric(map_data['lon']) 
-# map_dat['date']=dt.strptime(map_data['date'],'%Y/%m/%d')
 
-# fig=go.Figure(go.Choroplethmapbox(
-#                              data_frame=map_data,
-#                              lat=map_data.lat,
-#                              lon=map_data.lon,
-#                              z=map_data.cases,
-#                              test=map_data.County_name,
-#                              showscale=True,
-#               ))
 
-# fig.update_layout(mapbox_style="carto-darkmatter",
-#                   mapbox_zoom=3,
-#                   mapbox_center={"lat":34.2,"lon":118.3},
-#                   )
 
 def plot_world_data(County_name,lat,lon,cases):
   data = [go.Choropleth(
